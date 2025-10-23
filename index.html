@@ -690,33 +690,46 @@
         }
 
         async function generateImageWithGemini(prompt) {
-            const imagePrompt = `Generate a high-quality image: ${prompt}`;
-            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-001:predict?key=${API_KEY}`;
+            console.log("Generating image with Gemini...");
+            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${API_KEY}`;
 
-            const requestBody = {
-                instances: [{
-                    prompt: imagePrompt
+            const payload = {
+                contents: [{
+                    parts: [{ text: prompt }]
                 }],
-                parameters: {
-                    sampleCount: 1,
-                    aspectRatio: "16:9",
-                    safetyFilterLevel: "block_few",
-                    personGeneration: "allow_adult"
-                }
+                generationConfig: {
+                    responseModalities: ['IMAGE'],
+                    temperature: 0.8,
+                    maxOutputTokens: 2048
+                },
+                safetySettings: [
+                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+                ]
             };
 
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requestBody)
+                body: JSON.stringify(payload)
             });
 
             if (!response.ok) {
-                throw new Error('圖像生成失敗');
+                const errorBody = await response.text();
+                console.error("API Error:", errorBody);
+                throw new Error(`圖像生成失敗: ${response.status}`);
             }
 
-            const data = await response.json();
-            return data.predictions[0].bytesBase64Encoded;
+            const result = await response.json();
+            const imagePart = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+
+            if (imagePart) {
+                return imagePart.inlineData.data;
+            } else {
+                throw new Error("API 未返回有效的圖片資料");
+            }
         }
 
         // ====================================
