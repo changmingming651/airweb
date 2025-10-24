@@ -5,61 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>室內設計預覽</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #1a1a2e;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232a2a42' fill-opacity='0.3' fill-rule='evenodd'/%3E%3C/svg%3E"),
+                linear-gradient(rgba(26, 26, 46, 0.95), rgba(26, 26, 46, 0.95));
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
         }
         .app-container {
             max-width: 1400px;
             margin: 2rem auto;
             padding: 2rem;
-            background-color: white;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            background-color: #12121e;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid #2a2a42;
         }
         .btn {
             transition: all 0.3s ease;
             font-weight: 600;
             padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: 0.25rem;
             cursor: pointer;
+            border: none;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-color: #165dff;
             color: white;
         }
         .btn-primary:hover {
+            background-color: #0e42c3;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 4px 12px rgba(22, 93, 255, 0.3);
         }
         .btn-disabled {
-            background-color: #d1d5db;
+            background-color: #333842;
             cursor: not-allowed;
             opacity: 0.6;
         }
         .style-card {
-            border: 3px solid #e5e7eb;
-            border-radius: 1rem;
+            border: 2px solid #2a2a42;
+            border-radius: 0.5rem;
             padding: 1.5rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            background: white;
+            background: #1a1a2e;
+            color: #ffffff;
+            background-image: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238b7765' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         .style-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.2);
-            transform: translateY(-4px);
+            border-color: #165dff;
+            box-shadow: 0 6px 15px rgba(22, 93, 255, 0.2);
+            transform: translateY(-3px);
         }
         .style-card.selected {
-            border-color: #667eea;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            border-color: #165dff;
+            background-color: #1e1e3a;
+            box-shadow: 0 0 15px rgba(22, 93, 255, 0.25);
         }
         .loader {
-            border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+            border: 4px solid #2a2a42;
+            border-top: 4px solid #165dff;
             border-radius: 50%;
             width: 50px;
             height: 50px;
@@ -70,62 +82,68 @@
             100% { transform: rotate(360deg); }
         }
         .image-container {
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+            background-color: #1a1a2e;
+            border: 1px solid #2a2a42;
         }
         .progress-step {
             display: flex;
             align-items: center;
             margin-bottom: 1rem;
             padding: 1rem;
-            border-radius: 0.5rem;
-            background: #f9fafb;
+            border-radius: 0.25rem;
+            background: #1a1a2e;
+            border: 1px solid #2a2a42;
+            color: #ffffff;
         }
         .progress-step.active {
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border: 2px solid #667eea;
+            background-color: #1e1e3a;
+            border: 1px solid #165dff;
         }
         .progress-step.completed {
-            background: #d1fae5;
-            border: 2px solid #10b981;
+            background-color: #1a2e2a;
+            border: 1px solid #0e9f6e;
         }
         .tab-button {
             padding: 1rem 2rem;
-            border-bottom: 3px solid transparent;
+            border-bottom: 2px solid transparent;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 600;
+            font-weight: 500;
+            color: #b0b0c0;
         }
         .tab-button:hover {
-            color: #667eea;
+            color: #165dff;
         }
         .tab-button.active {
-            color: #667eea;
-            border-bottom-color: #667eea;
+            color: #165dff;
+            border-bottom-color: #165dff;
         }
         .render-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 1.5rem;
         }
         .render-item {
             position: relative;
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
+            border: 1px solid #2a2a42;
         }
         .render-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
         .render-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             color: white;
             padding: 1rem;
             opacity: 0;
@@ -134,16 +152,49 @@
         .render-item:hover .render-overlay {
             opacity: 1;
         }
+        .upload-area {
+            border: 2px dashed #2a2a42;
+            background-color: #1a1a2e;
+            color: #ffffff;
+        }
+        .upload-area:hover {
+            background-color: #1e1e3a;
+            border-color: #165dff;
+        }
+        p, label, span, div {
+            color: #e0e0e8;
+        }
+        input {
+            background-color: #2a2a42 !important;
+            border-color: #3a3a52 !important;
+            color: #ffffff !important;
+        }
+        input::placeholder {
+            color: #8080a0 !important;
+        }
+        .text-gray-500, .text-gray-600 {
+            color: #8080a0 !important;
+        }
+        .text-gray-700, .text-gray-800 {
+            color: #e0e0e8 !important;
+        }
+        .bg-gray-50 {
+            background-color: #1a1a2e !important;
+            border-color: #2a2a42 !important;
+        }
+        .bg-white {
+            background-color: #1e1e3a !important;
+        }
     </style>
 </head>
 <body>
 
     <div class="app-container">
         <header class="text-center mb-8">
-            <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-3">
+            <h1 class="text-5xl font-bold mb-3">
                 室內設計預覽
             </h1>
-            <p class="text-gray-600 text-lg">輸入平面圖、坪數、預算和風格，讓我為您設計</p>
+            <p class="text-gray-400 text-lg">輸入平面圖、坪數、預算和風格，讓我為您設計</p>
         </header>
 
         <!-- 輸入表單 -->
@@ -151,31 +202,31 @@
             
             <!-- 平面圖上傳區 -->
             <div class="mb-8">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">📐 上傳平面圖</h3>
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 border-2 border-dashed border-purple-300">
+                <h3 class="text-2xl font-bold mb-4">📐 上傳平面圖</h3>
+                <div class="bg-gray-50 rounded-xl p-8 border">
                     
                     <!-- 上傳區域 -->
-                    <div id="upload-area" class="text-center cursor-pointer transition-all hover:bg-purple-100 p-8 rounded-lg">
+                    <div id="upload-area" class="text-center cursor-pointer transition-all p-8 rounded-lg">
                         <input type="file" id="floorplan-upload" accept="image/*" class="hidden">
                         <div class="text-6xl mb-4">🏠</div>
-                        <h4 class="text-xl font-semibold text-gray-700 mb-2">點擊或拖拽上傳平面圖</h4>
-                        <p class="text-gray-600 mb-4">支援 JPG, PNG 格式</p>
+                        <h4 class="text-xl font-semibold mb-2">點擊或拖拽上傳平面圖</h4>
+                        <p class="text-gray-500 mb-4">支援 JPG, PNG 格式</p>
                         <button type="button" onclick="document.getElementById('floorplan-upload').click()" 
-                                class="btn bg-purple-600 text-white hover:bg-purple-700">
+                                class="btn bg-gray-700 text-white hover:bg-gray-800">
                             選擇檔案
                         </button>
                     </div>
 
                     <!-- 預覽區域 -->
                     <div id="upload-preview" class="hidden mt-6">
-                        <div class="bg-white rounded-lg p-4 shadow-md">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
                             <div class="flex items-center justify-between mb-3">
-                                <h5 class="font-semibold text-gray-700">✅ 已上傳的平面圖</h5>
-                                <button id="clear-upload" class="text-red-600 hover:text-red-800 font-semibold text-sm">
+                                <h5 class="font-semibold">✅ 已上傳的平面圖</h5>
+                                <button id="clear-upload" class="text-red-400 hover:text-red-300 font-semibold text-sm">
                                     🗑️ 清除
                                 </button>
                             </div>
-                            <img id="floorplan-preview-img" src="" alt="平面圖預覽" class="w-full max-h-80 object-contain rounded-lg border-2 border-gray-200">
+                            <img id="floorplan-preview-img" src="" alt="平面圖預覽" class="w-full max-h-80 object-contain rounded-lg border border-gray-700">
                         </div>
                     </div>
                 </div>
@@ -184,14 +235,14 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 
                 <!-- 坪數輸入 -->
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <label class="block text-lg font-semibold text-gray-700 mb-3">
+                <div class="bg-gray-50 p-6 rounded-xl border">
+                    <label class="block text-lg font-semibold mb-3">
                         🏠 室內坪數
                     </label>
                     <input 
                         type="number" 
                         id="square-meters" 
-                        class="w-full p-4 border-2 border-gray-300 rounded-lg text-xl focus:border-purple-500 focus:outline-none"
+                        class="w-full p-4 border rounded-lg text-xl focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
                         placeholder="例如: 30"
                         value="30"
                         min="10"
@@ -203,14 +254,14 @@
                 </div>
 
                 <!-- 預算輸入 -->
-                <div class="bg-gray-50 p-6 rounded-xl">
-                    <label class="block text-lg font-semibold text-gray-700 mb-3">
+                <div class="bg-gray-50 p-6 rounded-xl border">
+                    <label class="block text-lg font-semibold mb-3">
                         💰 裝潢預算 (NT$)
                     </label>
                     <input 
                         type="number" 
                         id="budget" 
-                        class="w-full p-4 border-2 border-gray-300 rounded-lg text-xl focus:border-purple-500 focus:outline-none"
+                        class="w-full p-4 border rounded-lg text-xl focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
                         placeholder="例如: 800000"
                         value="800000"
                         min="100000"
@@ -220,13 +271,11 @@
                         約每坪 <span id="budget-per-ping">27k</span>
                     </p>
                 </div>
-
-
             </div>
 
             <!-- 風格選擇 -->
             <div class="mb-6">
-                <h3 class="text-2xl font-bold text-gray-800 mb-4">🎨 選擇設計風格</h3>
+                <h3 class="text-2xl font-bold mb-4">🎨 選擇設計風格</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="style-grid">
                     <!-- 動態生成 -->
                 </div>
@@ -236,7 +285,7 @@
             <div class="text-center">
                 <button 
                     id="generate-btn" 
-                    class="btn btn-primary text-xl px-12 py-4 shadow-lg"
+                    class="btn btn-primary text-xl px-12 py-4 shadow-md"
                 >
                     🚀 開始生成設計方案
                 </button>
@@ -245,14 +294,14 @@
 
         <!-- 進度顯示 -->
         <div id="progress-section" class="mb-8 hidden">
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">⏳ 生成進度</h3>
+            <h3 class="text-2xl font-bold mb-4">⏳ 生成進度</h3>
             
             <div class="progress-step" id="step-1">
                 <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-4 font-bold">1</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">1</div>
                     <div>
-                        <div class="font-semibold">分析空間需求</div>
-                        <div class="text-sm text-gray-600">根據坪數和預算規劃空間配置</div>
+                        <div class="font-semibold">分析平面圖並規劃空間</div>
+                        <div class="text-sm text-gray-400">根據坪數和預算規劃設計方案</div>
                     </div>
                 </div>
                 <div class="loader hidden" id="loader-1"></div>
@@ -260,10 +309,10 @@
 
             <div class="progress-step" id="step-2">
                 <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-4 font-bold">2</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">2</div>
                     <div>
                         <div class="font-semibold">生成平面配置圖</div>
-                        <div class="text-sm text-gray-600">創建帶傢俱的室內平面圖</div>
+                        <div class="text-sm text-gray-400">創建帶傢俱的室內平面圖</div>
                     </div>
                 </div>
                 <div class="loader hidden" id="loader-2"></div>
@@ -271,10 +320,10 @@
 
             <div class="progress-step" id="step-3">
                 <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-4 font-bold">3</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">3</div>
                     <div>
                         <div class="font-semibold">生成空間渲染圖</div>
-                        <div class="text-sm text-gray-600" id="render-progress">準備生成各空間的寫實效果圖</div>
+                        <div class="text-sm text-gray-400" id="render-progress">準備生成各空間的寫實效果圖</div>
                     </div>
                 </div>
                 <div class="loader hidden" id="loader-3"></div>
@@ -283,26 +332,23 @@
 
         <!-- 結果顯示 -->
         <div id="result-section" class="hidden">
-            <h3 class="text-3xl font-bold text-gray-800 mb-6">✨ 設計成果</h3>
+            <h3 class="text-3xl font-bold mb-6">✨ 設計成果</h3>
             
             <!-- 標籤切換 -->
-            <div class="flex border-b-2 border-gray-200 mb-6">
+            <div class="flex border-b border-gray-700 mb-6">
                 <button class="tab-button active" data-tab="floorplan">
                     📐 平面配置圖
                 </button>
                 <button class="tab-button" data-tab="renders">
                     🏠 空間渲染圖
                 </button>
-                <button class="tab-button" data-tab="details">
-                    📝 設計說明
-                </button>
             </div>
 
             <!-- 平面配置圖 -->
             <div id="tab-floorplan" class="tab-content">
-                <div class="image-container bg-gray-100 flex items-center justify-center" style="min-height: 500px;">
+                <div class="image-container flex items-center justify-center" style="min-height: 500px;">
                     <img id="floorplan-image" src="" alt="平面配置圖" class="max-w-full max-h-[700px] object-contain" style="display:none;">
-                    <span id="floorplan-placeholder" class="text-gray-400">平面圖將顯示在這裡</span>
+                    <span id="floorplan-placeholder" class="text-gray-500">平面圖將顯示在這裡</span>
                 </div>
             </div>
 
@@ -313,36 +359,12 @@
                 </div>
             </div>
 
-            <!-- 設計說明 -->
-            <div id="tab-details" class="tab-content hidden">
-                <div class="bg-gray-50 rounded-xl p-8">
-                    <h4 class="text-2xl font-bold mb-4">設計概念</h4>
-                    <p id="design-concept" class="text-gray-700 leading-relaxed mb-6"></p>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
-                            <h5 class="font-bold text-lg mb-3">🎨 色彩配置</h5>
-                            <div id="color-scheme" class="flex flex-wrap gap-2"></div>
-                        </div>
-                        <div>
-                            <h5 class="font-bold text-lg mb-3">🪵 建材建議</h5>
-                            <ul id="materials-list" class="list-disc list-inside text-gray-600"></ul>
-                        </div>
-                    </div>
-
-                    <div class="mt-6">
-                        <h5 class="font-bold text-lg mb-3">🏠 空間配置</h5>
-                        <div id="rooms-list" class="grid md:grid-cols-2 gap-4"></div>
-                    </div>
-                </div>
-            </div>
-
             <!-- 操作按鈕 -->
             <div class="mt-8 flex gap-4 justify-center">
-                <button id="download-all-btn" class="btn bg-green-600 text-white hover:bg-green-700">
+                <button id="download-all-btn" class="btn bg-green-700 text-white hover:bg-green-800">
                     💾 下載全部圖片
                 </button>
-                <button id="regenerate-btn" class="btn bg-purple-600 text-white hover:bg-purple-700">
+                <button id="regenerate-btn" class="btn bg-gray-700 text-white hover:bg-gray-800">
                     🔄 重新生成
                 </button>
             </div>
@@ -371,13 +393,7 @@
                         'monochromatic palette',
                         'serene calm atmosphere'
                     ],
-                    promptTemplate: `Interior design by Vincent Van Duysen style:
-- Pure minimalist aesthetic with timeless appeal
-- Natural materials: pale oak, limestone, raw linen
-- Monochromatic neutral color scheme
-- Clean architectural lines with subtle textural variations
-- Abundance of natural light creating serene atmosphere
-- High-end architectural photography, soft natural light`
+                    promptTemplate: `Interior design by Vincent Van Duysen style, pure minimalist aesthetic with timeless appeal, natural materials pale oak limestone raw linen, monochromatic neutral color scheme, clean architectural lines with subtle textural variations, abundance of natural light creating serene atmosphere, high-end architectural photography, soft natural light`
                 }
             },
             'scandinavian': {
@@ -397,14 +413,7 @@
                         'natural light',
                         'comfortable elegance'
                     ],
-                    promptTemplate: `Interior design by Studio McGee - Scandinavian style:
-- Refined casual elegance with Nordic influence
-- Warm neutral colors with light wood tones
-- Layered natural textiles and cozy elements
-- Abundant natural light in airy spaces
-- Mix of modern and organic elements
-- Plants and natural accessories
-- Professional lifestyle photography, bright soft lighting`
+                    promptTemplate: `Interior design by Studio McGee Scandinavian style, refined casual elegance with Nordic influence, warm neutral colors with light wood tones, layered natural textiles and cozy elements, abundant natural light in airy spaces, mix of modern and organic elements, plants and natural accessories, professional lifestyle photography, bright soft lighting`
                 }
             },
             'luxury-modern': {
@@ -424,14 +433,7 @@
                         'layered lighting',
                         'East-West fusion'
                     ],
-                    promptTemplate: `Interior design by Kelly Hoppen luxury style:
-- Sophisticated neutral palette with taupe, cream, soft grey
-- Luxurious textures: velvet, silk, polished marble
-- Perfect symmetry and balanced composition
-- Subtle East-meets-West fusion elements
-- Layered ambient lighting with warm elegant glow
-- Clean lines with opulent details
-- High-end interior photography, dramatic elegant lighting`
+                    promptTemplate: `Interior design by Kelly Hoppen luxury style, sophisticated neutral palette with taupe cream soft grey, luxurious textures velvet silk polished marble, perfect symmetry and balanced composition, subtle East-meets-West fusion elements, layered ambient lighting with warm elegant glow, clean lines with opulent details, high-end interior photography, dramatic elegant lighting`
                 }
             },
             'industrial': {
@@ -451,14 +453,7 @@
                         'collected pieces',
                         'comfortable luxury'
                     ],
-                    promptTemplate: `Interior design by Nate Berkus - Industrial style:
-- Warm industrial aesthetic with collected touches
-- Mix of vintage and contemporary pieces
-- Exposed brick, metal, reclaimed wood
-- Layered textiles: linen, leather, woven fabrics
-- Rich warm color palette with character
-- Personal artifacts and meaningful objects
-- Editorial interior photography, natural warm lighting`
+                    promptTemplate: `Interior design by Nate Berkus Industrial style, warm industrial aesthetic with collected touches, mix of vintage and contemporary pieces, exposed brick metal reclaimed wood, layered textiles linen leather woven fabrics, rich warm color palette with character, personal artifacts and meaningful objects, editorial interior photography, natural warm lighting`
                 }
             },
             'japanese-zen': {
@@ -478,14 +473,7 @@
                         'raw textures',
                         'contemplative atmosphere'
                     ],
-                    promptTemplate: `Interior design by Axel Vervoordt - Japanese Zen:
-- Wabi-sabi aesthetic celebrating imperfection
-- Aged weathered materials with beautiful patina
-- Muted earthy color palette
-- Mix of ancient and contemporary elements
-- Raw organic textures and natural materials
-- Spiritual contemplative atmosphere
-- Fine art photography, soft diffused natural lighting`
+                    promptTemplate: `Interior design by Axel Vervoordt Japanese Zen, wabi-sabi aesthetic celebrating imperfection, aged weathered materials with beautiful patina, muted earthy color palette, mix of ancient and contemporary elements, raw organic textures and natural materials, spiritual contemplative atmosphere, fine art photography, soft diffused natural lighting`
                 }
             }
         };
@@ -497,7 +485,7 @@
             squareMeters: 30,
             budget: 800000,
             selectedStyle: 'modern-minimalist',
-            uploadedFloorplan: null,  // 上傳的平面圖 base64
+            uploadedFloorplan: null,
             uploadedFileName: '',
             isGenerating: false,
             currentStep: 0,
@@ -506,7 +494,7 @@
             renders: []
         };
 
-        // API Key（直接設定在程式碼中）
+        // API Key
         const API_KEY = "AIzaSyBnficu4WvKraFrO0XJIOD95ZIYbM9aAgI";
 
         // ====================================
@@ -542,7 +530,7 @@
                 card.innerHTML = `
                     <div class="text-4xl mb-2 text-center">${style.emoji}</div>
                     <h4 class="font-bold text-center mb-1">${style.label}</h4>
-                    <p class="text-xs text-gray-600 text-center">${style.description}</p>
+                    <p class="text-xs text-gray-400 text-center">${style.description}</p>
                 `;
                 card.onclick = () => selectStyle(style.id);
                 styleGrid.appendChild(card);
@@ -566,16 +554,16 @@
             // 拖拽上傳
             uploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
-                uploadArea.classList.add('bg-purple-100');
+                uploadArea.classList.add('bg-gray-800');
             });
             
             uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('bg-purple-100');
+                uploadArea.classList.remove('bg-gray-800');
             });
             
             uploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
-                uploadArea.classList.remove('bg-purple-100');
+                uploadArea.classList.remove('bg-gray-800');
                 const file = e.dataTransfer.files[0];
                 if (file && file.type.startsWith('image/')) {
                     processFloorplanFile(file);
@@ -598,6 +586,8 @@
                 inputSection.classList.remove('hidden');
                 state.currentStep = 0;
             });
+
+            document.getElementById('download-all-btn').addEventListener('click', downloadAllImages);
         }
 
         function handleFloorplanUpload(event) {
@@ -614,7 +604,6 @@
                 const base64 = e.target.result.split(',')[1];
                 state.uploadedFloorplan = base64;
                 
-                // 顯示預覽
                 uploadArea.classList.add('hidden');
                 uploadPreview.classList.remove('hidden');
                 floorplanPreviewImg.src = e.target.result;
@@ -644,6 +633,87 @@
         // ====================================
         // Gemini API 調用
         // ====================================
+        async function generateImageWithGemini(prompt, base64ImageData = null, maxRetries = 2) {
+            console.log("Calling Gemini API for image generation...");
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${API_KEY}`;
+
+            const parts = [{ text: prompt }];
+            if (base64ImageData) {
+                parts.push({
+                    inlineData: {
+                        mimeType: "image/png",
+                        data: base64ImageData
+                    }
+                });
+            }
+
+            const payload = {
+                contents: [{ parts: parts }],
+                generationConfig: {
+                    responseModalities: ['TEXT', 'IMAGE'],
+                    temperature: 0.8,
+                    maxOutputTokens: 2048
+                },
+                safetySettings: [
+                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
+                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
+                ]
+            };
+
+            let lastError = null;
+
+            for (let attempt = 0; attempt <= maxRetries; attempt++) {
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorBody = await response.text();
+                        console.error(`Attempt ${attempt + 1} API Error:`, errorBody);
+                        lastError = new Error(`API請求失敗,狀態碼:${response.status}`);
+                        
+                        if (attempt < maxRetries && (errorBody.includes("safety") || errorBody.includes("policy"))) {
+                            console.log("Safety filter triggered. Retrying with enhanced prompt...");
+                            payload.contents[0].parts[0].text += ", professional architectural photography, SFW, tasteful design";
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                            continue;
+                        }
+                        throw lastError;
+                    }
+
+                    const result = await response.json();
+                    const imagePart = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
+
+                    if (imagePart) {
+                        console.log("Image successfully generated.");
+                        return imagePart.inlineData.data;
+                    } else {
+                        lastError = new Error("API未返回有效的圖片資料");
+                        console.error("Invalid API response structure:", result);
+                        if (attempt < maxRetries) {
+                            console.log("Retrying...");
+                            payload.contents[0].parts[0].text += ", high quality render";
+                            await new Promise(resolve => setTimeout(resolve, 1000));
+                            continue;
+                        }
+                    }
+                } catch (error) {
+                    console.error(`Attempt ${attempt + 1} failed:`, error);
+                    lastError = error;
+                    if (attempt < maxRetries) {
+                        await new Promise(resolve => setTimeout(resolve, 1000));
+                    }
+                }
+            }
+            
+            throw lastError;
+        }
+
         async function callGeminiAPI(prompt, images = []) {
             const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${API_KEY}`;
 
@@ -689,56 +759,12 @@
             return data.candidates[0].content.parts[0].text;
         }
 
-        async function generateImageWithGemini(prompt) {
-            console.log("Generating image with Gemini...");
-            const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${API_KEY}`;
-
-            const payload = {
-                contents: [{
-                    parts: [{ text: prompt }]
-                }],
-                generationConfig: {
-                    responseModalities: ['IMAGE'],
-                    temperature: 0.8,
-                    maxOutputTokens: 2048
-                },
-                safetySettings: [
-                    { category: "HARM_CATEGORY_HARASSMENT", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_HATE_SPEECH", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_SEXUALLY_EXPLICIT", threshold: "BLOCK_NONE" },
-                    { category: "HARM_CATEGORY_DANGEROUS_CONTENT", threshold: "BLOCK_NONE" }
-                ]
-            };
-
-            const response = await fetch(API_URL, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-
-            if (!response.ok) {
-                const errorBody = await response.text();
-                console.error("API Error:", errorBody);
-                throw new Error(`圖像生成失敗: ${response.status}`);
-            }
-
-            const result = await response.json();
-            const imagePart = result?.candidates?.[0]?.content?.parts?.find(p => p.inlineData);
-
-            if (imagePart) {
-                return imagePart.inlineData.data;
-            } else {
-                throw new Error("API 未返回有效的圖片資料");
-            }
-        }
-
         // ====================================
         // 生成流程
         // ====================================
         async function startGeneration() {
             if (state.isGenerating) return;
             
-            // 檢查是否上傳平面圖
             if (!state.uploadedFloorplan) {
                 alert('請先上傳平面圖！');
                 return;
@@ -796,7 +822,7 @@
                 loaderEl.classList.add('hidden');
                 const numberDiv = stepEl.querySelector('.w-10');
                 numberDiv.textContent = '✓';
-                numberDiv.classList.add('bg-green-500', 'text-white');
+                numberDiv.classList.add('bg-green-600', 'text-white');
             }
         }
 
@@ -827,22 +853,18 @@
         "area": "10坪",
         "furniture": ["L型沙發", "電視櫃", "茶几", "邊几"],
         "features": ["落地窗", "主要採光面"],
-        "design_notes": "開放式設計，連接餐廳，採用${designer.name}的${DESIGNER_STYLES[state.selectedStyle].label}風格"
+        "design_notes": "開放式設計，連接餐廳"
       }
     ]
   },
-  "design_concept": "根據平面圖分析，提供整體設計概念的詳細說明（至少150字）",
-  "material_suggestions": ["建材1", "建材2", "建材3", "建材4"],
-  "color_scheme": ${JSON.stringify(designer.colorPalette)}
+  "design_concept": "根據平面圖分析，提供整體設計概念的詳細說明（至少150字）"
 }
 
 請確保:
 1. 根據實際平面圖的格局進行分析
 2. 考慮坪數和預算選擇合適的設計方案
-3. 完全符合${DESIGNER_STYLES[state.selectedStyle].label}風格特點
-4. 提供詳細且專業的設計說明`;
+3. 完全符合${DESIGNER_STYLES[state.selectedStyle].label}風格特點`;
 
-            // 使用上傳的平面圖調用 API
             const response = await callGeminiAPI(prompt, [state.uploadedFloorplan]);
             const jsonMatch = response.match(/\{[\s\S]*\}/);
             if (jsonMatch) {
@@ -856,35 +878,31 @@
             const designer = DESIGNER_STYLES[state.selectedStyle].designer;
             
             const roomsDesc = state.layoutData.layout.rooms.map(room => 
-                `${room.name} (${room.area}): ${room.furniture.join(', ')}`
-            ).join('\n');
+                `${room.name}（${room.area}）`
+            ).join('、');
 
-            const floorplanPrompt = `Create a professional architectural floor plan illustration:
+            const floorplanPrompt = `請創建一個專業的室內平面配置圖（俯視圖）。
 
-Style: ${DESIGNER_STYLES[state.selectedStyle].label} - ${designer.name} inspired
-Total Area: ${(state.squareMeters * 3.306).toFixed(0)} square meters
+設計風格：${DESIGNER_STYLES[state.selectedStyle].label}
+總面積：${(state.squareMeters * 3.306).toFixed(0)} 平方公尺
 
-Rooms layout:
-${roomsDesc}
+空間配置：${state.layoutData.layout.rooms.map(room => `${room.name} ${room.area}`).join('、')}
 
-Requirements:
-- Top-down architectural view
-- Clear room boundaries with dimensions
-- Furniture placement (top view icons)
-- Door swings and window positions
-- Room labels in clean font
-- Scale indicator
-- North arrow
-- Color-coded zones (living area: warm tones, bedrooms: cool tones, wet areas: blue)
-- Professional architectural drawing style
-- White background with thin black lines
-- Subtle color fills for different functional zones
-- Modern, clean presentation
+圖面要求：
+• 清晰的房間邊界線
+• 標註各房間尺寸
+• 俯視角度的傢俱配置
+• 門的開啟方向和窗戶位置
+• 比例尺和指北針
+• 使用繁體中文清楚標註：${roomsDesc}
+• 專業建築製圖風格
+• 白色背景，細黑線條
+• 不同區域用淡色區分
 
-Technical style: Clean architectural illustration, professional CAD-like appearance, clear annotations`;
+請在圖面上清楚寫出每個房間的繁體中文名稱。`;
 
             try {
-                const base64Image = await generateImageWithGemini(floorplanPrompt);
+                const base64Image = await generateImageWithGemini(floorplanPrompt, state.uploadedFloorplan);
                 state.floorplanImage = `data:image/png;base64,${base64Image}`;
                 
                 const img = document.getElementById('floorplan-image');
@@ -893,8 +911,12 @@ Technical style: Clean architectural illustration, professional CAD-like appeara
                 img.style.display = 'block';
                 placeholder.style.display = 'none';
             } catch (error) {
-                console.error('平面圖生成失敗，使用文字替代:', error);
-                document.getElementById('floorplan-placeholder').textContent = '平面圖生成失敗，請查看空間配置說明';
+                console.error('平面圖生成失敗:', error);
+                const img = document.getElementById('floorplan-image');
+                const placeholder = document.getElementById('floorplan-placeholder');
+                img.src = `data:image/png;base64,${state.uploadedFloorplan}`;
+                img.style.display = 'block';
+                placeholder.style.display = 'none';
             }
         }
 
@@ -905,37 +927,20 @@ Technical style: Clean architectural illustration, professional CAD-like appeara
             
             state.renders = [];
             let completed = 0;
-            const total = rooms.length * 1.5; // 估算渲染數量
+            let totalViews = 0;
+            
+            rooms.forEach(room => {
+                totalViews += room.name === '客廳' ? 2 : 1;
+            });
 
             for (const room of rooms) {
                 const views = room.name === '客廳' ? ['主沙發區視角', '從入口看向客廳'] : [`${room.name}主視角`];
                 
                 for (const view of views) {
                     completed++;
-                    renderProgressEl.textContent = `正在生成 ${room.name} - ${view} (${completed}/${Math.ceil(total)})`;
+                    renderProgressEl.textContent = `正在生成 ${room.name} - ${view} (${completed}/${totalViews})`;
 
-                    const renderPrompt = `${designer.promptTemplate}
-
-SPECIFIC ROOM: ${room.name} - ${view}
-Room Size: ${room.area}
-Furniture: ${room.furniture.join(', ')}
-Design notes: ${room.design_notes}
-
-Color palette: ${designer.colorPalette.join(', ')}
-Materials: ${designer.materials.join(', ')}
-Keywords: ${designer.keywords.join(', ')}
-
-Overall concept: ${state.layoutData.design_concept}
-
-Technical requirements:
-- Photorealistic interior rendering
-- Eye-level camera angle, 24mm lens perspective
-- Natural daylight from windows
-- Professional architectural photography quality
-- Show spatial depth and relationships
-- Realistic shadows and reflections
-- Warm inviting atmosphere
-- High resolution details`;
+                    const renderPrompt = `${designer.promptTemplate}. ROOM: ${room.name} ${view}. Size: ${room.area}. Furniture: ${room.furniture.join(' ')}. ${room.design_notes}. Photorealistic interior rendering, eye-level camera angle 24mm lens, natural daylight from windows, professional architectural photography, show spatial depth, realistic shadows reflections, warm inviting atmosphere, high resolution details`;
 
                     try {
                         const base64Image = await generateImageWithGemini(renderPrompt);
@@ -959,8 +964,6 @@ Technical requirements:
                     await new Promise(resolve => setTimeout(resolve, 2000));
                 }
             }
-
-            displayDetails();
         }
 
         function displayRender(render) {
@@ -982,36 +985,25 @@ Technical requirements:
             container.appendChild(item);
         }
 
-        function displayDetails() {
-            document.getElementById('design-concept').textContent = state.layoutData.design_concept;
-
-            const colorScheme = document.getElementById('color-scheme');
-            colorScheme.innerHTML = state.layoutData.color_scheme.map(color => 
-                `<span class="px-4 py-2 bg-gray-200 rounded-full text-sm">${color}</span>`
-            ).join('');
-
-            const materialsList = document.getElementById('materials-list');
-            materialsList.innerHTML = state.layoutData.material_suggestions.map(material => 
-                `<li>${material}</li>`
-            ).join('');
-
-            const roomsList = document.getElementById('rooms-list');
-            roomsList.innerHTML = state.layoutData.layout.rooms.map(room => `
-                <div class="bg-white p-4 rounded-lg shadow">
-                    <h6 class="font-bold mb-2">${room.name} (${room.area})</h6>
-                    <p class="text-sm text-gray-600 mb-2">${room.design_notes}</p>
-                    <div class="text-xs text-gray-500">
-                        傢俱：${room.furniture.join('、')}
-                    </div>
-                </div>
-            `).join('');
-        }
-
         function downloadImage(dataUrl, filename) {
             const a = document.createElement('a');
             a.href = dataUrl;
             a.download = `${filename}-${Date.now()}.png`;
             a.click();
+        }
+
+        function downloadAllImages() {
+            // 下載平面圖
+            if (state.floorplanImage) {
+                downloadImage(state.floorplanImage, '平面配置圖');
+            }
+
+            // 下載所有渲染圖
+            state.renders.forEach((render, index) => {
+                setTimeout(() => {
+                    downloadImage(render.imageUrl, `${render.space}-${render.view}`);
+                }, index * 500);
+            });
         }
 
         // 啟動
