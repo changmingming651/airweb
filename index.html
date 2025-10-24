@@ -57,7 +57,6 @@
             transition: all 0.3s ease;
             background: #1a1a2e;
             color: #ffffff;
-            background-image: linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9)), url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%238b7765' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
         }
         .style-card:hover {
             border-color: #165dff;
@@ -65,6 +64,26 @@
             transform: translateY(-3px);
         }
         .style-card.selected {
+            border-color: #165dff;
+            background-color: #1e1e3a;
+            box-shadow: 0 0 15px rgba(22, 93, 255, 0.25);
+        }
+        .render-type-card {
+            border: 2px solid #2a2a42;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #1a1a2e;
+            color: #ffffff;
+            text-align: center;
+        }
+        .render-type-card:hover {
+            border-color: #165dff;
+            box-shadow: 0 6px 15px rgba(22, 93, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        .render-type-card.selected {
             border-color: #165dff;
             background-color: #1e1e3a;
             box-shadow: 0 0 15px rgba(22, 93, 255, 0.25);
@@ -99,20 +118,20 @@
             color: #ffffff;
         }
         .progress-step.active {
-            background-color: #1e1e3a;
+            background: rgba(22, 93, 255, 0.1);
             border: 1px solid #165dff;
         }
         .progress-step.completed {
-            background-color: #1a2e2a;
-            border: 1px solid #0e9f6e;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid #10b981;
         }
         .tab-button {
             padding: 1rem 2rem;
-            border-bottom: 2px solid transparent;
+            border-bottom: 3px solid transparent;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
-            color: #b0b0c0;
+            font-weight: 600;
+            color: #888;
         }
         .tab-button:hover {
             color: #165dff;
@@ -130,13 +149,13 @@
             position: relative;
             border-radius: 0.5rem;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
             transition: all 0.3s ease;
             border: 1px solid #2a2a42;
         }
         .render-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
         }
         .render-overlay {
             position: absolute;
@@ -152,38 +171,8 @@
         .render-item:hover .render-overlay {
             opacity: 1;
         }
-        .upload-area {
-            border: 2px dashed #2a2a42;
-            background-color: #1a1a2e;
-            color: #ffffff;
-        }
-        .upload-area:hover {
-            background-color: #1e1e3a;
-            border-color: #165dff;
-        }
-        p, label, span, div {
-            color: #e0e0e8;
-        }
-        input {
-            background-color: #2a2a42 !important;
-            border-color: #3a3a52 !important;
-            color: #ffffff !important;
-        }
-        input::placeholder {
-            color: #8080a0 !important;
-        }
-        .text-gray-500, .text-gray-600 {
-            color: #8080a0 !important;
-        }
-        .text-gray-700, .text-gray-800 {
-            color: #e0e0e8 !important;
-        }
-        .bg-gray-50 {
-            background-color: #1a1a2e !important;
-            border-color: #2a2a42 !important;
-        }
-        .bg-white {
-            background-color: #1e1e3a !important;
+        #loading-message {
+            transition: opacity 0.3s ease;
         }
     </style>
 </head>
@@ -191,7 +180,7 @@
 
     <div class="app-container">
         <header class="text-center mb-8">
-            <h1 class="text-5xl font-bold mb-3">
+            <h1 class="text-5xl font-bold mb-3" style="background: linear-gradient(135deg, #165dff 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 室內設計預覽
             </h1>
             <p class="text-gray-400 text-lg">輸入平面圖、坪數、預算和風格，讓我為您設計</p>
@@ -203,71 +192,79 @@
             <!-- 平面圖上傳區 -->
             <div class="mb-8">
                 <h3 class="text-2xl font-bold mb-4">📐 上傳平面圖</h3>
-                <div class="bg-gray-50 rounded-xl p-8 border">
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg p-8 border-2 border-dashed border-gray-700">
                     
                     <!-- 上傳區域 -->
-                    <div id="upload-area" class="text-center cursor-pointer transition-all p-8 rounded-lg">
+                    <div id="upload-area" class="text-center cursor-pointer transition-all hover:bg-gray-800 p-8 rounded-lg">
                         <input type="file" id="floorplan-upload" accept="image/*" class="hidden">
                         <div class="text-6xl mb-4">🏠</div>
-                        <h4 class="text-xl font-semibold mb-2">點擊或拖拽上傳平面圖</h4>
-                        <p class="text-gray-500 mb-4">支援 JPG, PNG 格式</p>
+                        <h4 class="text-xl font-semibold text-gray-200 mb-2">點擊或拖拽上傳平面圖</h4>
+                        <p class="text-gray-400 mb-4">支援 JPG, PNG 格式</p>
                         <button type="button" onclick="document.getElementById('floorplan-upload').click()" 
-                                class="btn bg-gray-700 text-white hover:bg-gray-800">
+                                class="btn btn-primary">
                             選擇檔案
                         </button>
                     </div>
 
                     <!-- 預覽區域 -->
                     <div id="upload-preview" class="hidden mt-6">
-                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                        <div class="bg-gray-900 rounded-lg p-4 shadow-md border border-gray-700">
                             <div class="flex items-center justify-between mb-3">
-                                <h5 class="font-semibold">✅ 已上傳的平面圖</h5>
-                                <button id="clear-upload" class="text-red-400 hover:text-red-300 font-semibold text-sm">
+                                <h5 class="font-semibold text-gray-200">✅ 已上傳的平面圖</h5>
+                                <button id="clear-upload" class="text-red-500 hover:text-red-400 font-semibold text-sm">
                                     🗑️ 清除
                                 </button>
                             </div>
-                            <img id="floorplan-preview-img" src="" alt="平面圖預覽" class="w-full max-h-80 object-contain rounded-lg border border-gray-700">
+                            <img id="floorplan-preview-img" src="" alt="平面圖預覽" class="w-full max-h-80 object-contain rounded-lg border-2 border-gray-700">
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- 渲染類型選擇 -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold mb-4">🎨 選擇渲染類型</h3>
+                <div class="grid grid-cols-2 gap-4" id="render-type-grid">
+                    <!-- 動態生成 -->
                 </div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 
                 <!-- 坪數輸入 -->
-                <div class="bg-gray-50 p-6 rounded-xl border">
-                    <label class="block text-lg font-semibold mb-3">
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700">
+                    <label class="block text-lg font-semibold text-gray-200 mb-3">
                         🏠 室內坪數
                     </label>
                     <input 
                         type="number" 
                         id="square-meters" 
-                        class="w-full p-4 border rounded-lg text-xl focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                        class="w-full p-4 border-2 border-gray-700 bg-gray-800 text-white rounded-lg text-xl focus:border-blue-500 focus:outline-none"
                         placeholder="例如: 30"
                         value="30"
                         min="10"
                         max="200"
                     />
-                    <p class="text-sm text-gray-500 mt-2">
+                    <p class="text-sm text-gray-400 mt-2">
                         約 <span id="sqm-display">99</span> 平方公尺
                     </p>
                 </div>
 
                 <!-- 預算輸入 -->
-                <div class="bg-gray-50 p-6 rounded-xl border">
-                    <label class="block text-lg font-semibold mb-3">
+                <div class="bg-gray-900 p-6 rounded-lg border border-gray-700">
+                    <label class="block text-lg font-semibold text-gray-200 mb-3">
                         💰 裝潢預算 (NT$)
                     </label>
                     <input 
                         type="number" 
                         id="budget" 
-                        class="w-full p-4 border rounded-lg text-xl focus:border-blue-500 focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                        class="w-full p-4 border-2 border-gray-700 bg-gray-800 text-white rounded-lg text-xl focus:border-blue-500 focus:outline-none"
                         placeholder="例如: 800000"
                         value="800000"
                         min="100000"
                         step="50000"
                     />
-                    <p class="text-sm text-gray-500 mt-2">
+                    <p class="text-sm text-gray-400 mt-2">
                         約每坪 <span id="budget-per-ping">27k</span>
                     </p>
                 </div>
@@ -275,7 +272,7 @@
 
             <!-- 風格選擇 -->
             <div class="mb-6">
-                <h3 class="text-2xl font-bold mb-4">🎨 選擇設計風格</h3>
+                <h3 class="text-2xl font-bold mb-4">✨ 選擇設計風格</h3>
                 <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4" id="style-grid">
                     <!-- 動態生成 -->
                 </div>
@@ -285,48 +282,43 @@
             <div class="text-center">
                 <button 
                     id="generate-btn" 
-                    class="btn btn-primary text-xl px-12 py-4 shadow-md"
+                    class="btn btn-primary text-xl px-12 py-4 shadow-lg"
                 >
                     🚀 開始生成設計方案
                 </button>
             </div>
         </div>
 
-        <!-- 進度顯示 -->
-        <div id="progress-section" class="mb-8 hidden">
-            <h3 class="text-2xl font-bold mb-4">⏳ 生成進度</h3>
-            
-            <div class="progress-step" id="step-1">
-                <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">1</div>
-                    <div>
-                        <div class="font-semibold">分析平面圖並規劃空間</div>
-                        <div class="text-sm text-gray-400">根據坪數和預算規劃設計方案</div>
+        <!-- 優雅的等待畫面 -->
+        <div id="loading-section" class="mb-8 hidden">
+            <div class="flex flex-col items-center justify-center py-20">
+                <div class="mb-8">
+                    <!-- 動態 LOGO 動畫 -->
+                    <div class="relative w-32 h-32">
+                        <div class="absolute inset-0 border-4 border-blue-500 rounded-full animate-ping opacity-75"></div>
+                        <div class="absolute inset-0 border-4 border-blue-400 rounded-full animate-pulse"></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-5xl">🏠</span>
+                        </div>
                     </div>
                 </div>
-                <div class="loader hidden" id="loader-1"></div>
-            </div>
-
-            <div class="progress-step" id="step-2">
-                <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">2</div>
-                    <div>
-                        <div class="font-semibold">生成平面配置圖</div>
-                        <div class="text-sm text-gray-400">創建帶傢俱的室內平面圖</div>
-                    </div>
+                
+                <h3 class="text-3xl font-bold mb-4 text-center">正在為您設計夢想空間</h3>
+                <p class="text-gray-400 text-lg mb-8 text-center max-w-md" id="loading-message">
+                    我們正在仔細研讀您的空間...
+                </p>
+                
+                <!-- 優雅的進度指示 -->
+                <div class="flex gap-3 mb-8">
+                    <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0s"></div>
+                    <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                    <div class="w-3 h-3 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
                 </div>
-                <div class="loader hidden" id="loader-2"></div>
-            </div>
-
-            <div class="progress-step" id="step-3">
-                <div class="flex items-center flex-1">
-                    <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center mr-4 font-bold">3</div>
-                    <div>
-                        <div class="font-semibold">生成空間渲染圖</div>
-                        <div class="text-sm text-gray-400" id="render-progress">準備生成各空間的寫實效果圖</div>
-                    </div>
+                
+                <div class="text-sm text-gray-500 text-center">
+                    <p>預計需要 2-3 分鐘</p>
+                    <p class="mt-2">請勿關閉頁面</p>
                 </div>
-                <div class="loader hidden" id="loader-3"></div>
             </div>
         </div>
 
@@ -335,7 +327,7 @@
             <h3 class="text-3xl font-bold mb-6">✨ 設計成果</h3>
             
             <!-- 標籤切換 -->
-            <div class="flex border-b border-gray-700 mb-6">
+            <div class="flex border-b-2 border-gray-700 mb-6">
                 <button class="tab-button active" data-tab="floorplan">
                     📐 平面配置圖
                 </button>
@@ -346,7 +338,7 @@
 
             <!-- 平面配置圖 -->
             <div id="tab-floorplan" class="tab-content">
-                <div class="image-container flex items-center justify-center" style="min-height: 500px;">
+                <div class="image-container bg-gray-900 flex items-center justify-center" style="min-height: 500px;">
                     <img id="floorplan-image" src="" alt="平面配置圖" class="max-w-full max-h-[700px] object-contain" style="display:none;">
                     <span id="floorplan-placeholder" class="text-gray-500">平面圖將顯示在這裡</span>
                 </div>
@@ -361,10 +353,10 @@
 
             <!-- 操作按鈕 -->
             <div class="mt-8 flex gap-4 justify-center">
-                <button id="download-all-btn" class="btn bg-green-700 text-white hover:bg-green-800">
+                <button id="download-all-btn" class="btn bg-green-600 text-white hover:bg-green-700">
                     💾 下載全部圖片
                 </button>
-                <button id="regenerate-btn" class="btn bg-gray-700 text-white hover:bg-gray-800">
+                <button id="regenerate-btn" class="btn bg-purple-600 text-white hover:bg-purple-700">
                     🔄 重新生成
                 </button>
             </div>
@@ -383,17 +375,7 @@
                 description: '簡潔線條、中性色調',
                 designer: {
                     name: 'Vincent Van Duysen',
-                    colorPalette: ['米白色', '淺灰色', '淺木色', '石灰色'],
-                    materials: ['天然橡木', '石灰岩', '亞麻布', '拉絲鋼'],
-                    keywords: [
-                        'minimalist purity',
-                        'natural materials',
-                        'subtle textures',
-                        'timeless elegance',
-                        'monochromatic palette',
-                        'serene calm atmosphere'
-                    ],
-                    promptTemplate: `Interior design by Vincent Van Duysen style, pure minimalist aesthetic with timeless appeal, natural materials pale oak limestone raw linen, monochromatic neutral color scheme, clean architectural lines with subtle textural variations, abundance of natural light creating serene atmosphere, high-end architectural photography, soft natural light`
+                    promptTemplate: `modern minimalist interior design, clean lines, neutral tones, natural materials, pale oak limestone linen, serene atmosphere, soft natural lighting, high-end architectural photography`
                 }
             },
             'scandinavian': {
@@ -403,17 +385,7 @@
                 description: '溫暖木質、自然採光',
                 designer: {
                     name: 'Studio McGee',
-                    colorPalette: ['溫暖白', '灰褐色', '淺藍色', '天然木色'],
-                    materials: ['淺橡木', '亞麻布', '藤編', '天然纖維'],
-                    keywords: [
-                        'Scandinavian modern',
-                        'warm neutral palette',
-                        'light wood tones',
-                        'cozy textiles',
-                        'natural light',
-                        'comfortable elegance'
-                    ],
-                    promptTemplate: `Interior design by Studio McGee Scandinavian style, refined casual elegance with Nordic influence, warm neutral colors with light wood tones, layered natural textiles and cozy elements, abundant natural light in airy spaces, mix of modern and organic elements, plants and natural accessories, professional lifestyle photography, bright soft lighting`
+                    promptTemplate: `Scandinavian interior design, warm neutral palette, light wood tones, cozy textiles, natural light, comfortable elegance, plants, bright soft lighting`
                 }
             },
             'luxury-modern': {
@@ -423,17 +395,7 @@
                 description: '精緻材質、優雅色彩',
                 designer: {
                     name: 'Kelly Hoppen',
-                    colorPalette: ['駝色', '奶油色', '柔灰色', '金色點綴'],
-                    materials: ['天鵝絨', '絲綢', '拋光大理石', '黃銅', '烤漆'],
-                    keywords: [
-                        'luxurious sophistication',
-                        'symmetrical layout',
-                        'neutral tones',
-                        'opulent textures',
-                        'layered lighting',
-                        'East-West fusion'
-                    ],
-                    promptTemplate: `Interior design by Kelly Hoppen luxury style, sophisticated neutral palette with taupe cream soft grey, luxurious textures velvet silk polished marble, perfect symmetry and balanced composition, subtle East-meets-West fusion elements, layered ambient lighting with warm elegant glow, clean lines with opulent details, high-end interior photography, dramatic elegant lighting`
+                    promptTemplate: `luxury modern interior design, sophisticated neutral palette, taupe cream grey, luxurious textures velvet silk marble, elegant lighting, opulent details, dramatic lighting`
                 }
             },
             'industrial': {
@@ -443,17 +405,7 @@
                 description: '裸露材質、個性空間',
                 designer: {
                     name: 'Nate Berkus',
-                    colorPalette: ['溫暖中性色', '深藍色', '陶土色', '橄欖綠'],
-                    materials: ['回收木材', '亞麻布', '復古黃銅', '皮革'],
-                    keywords: [
-                        'industrial chic',
-                        'exposed materials',
-                        'vintage elements',
-                        'warm inviting atmosphere',
-                        'collected pieces',
-                        'comfortable luxury'
-                    ],
-                    promptTemplate: `Interior design by Nate Berkus Industrial style, warm industrial aesthetic with collected touches, mix of vintage and contemporary pieces, exposed brick metal reclaimed wood, layered textiles linen leather woven fabrics, rich warm color palette with character, personal artifacts and meaningful objects, editorial interior photography, natural warm lighting`
+                    promptTemplate: `industrial chic interior design, exposed materials, vintage elements, warm atmosphere, reclaimed wood leather metal, natural warm lighting`
                 }
             },
             'japanese-zen': {
@@ -463,18 +415,26 @@
                 description: '自然素材、寧靜氛圍',
                 designer: {
                     name: 'Axel Vervoordt',
-                    colorPalette: ['原始灰', '天然米', '風化白', '大地色調'],
-                    materials: ['老化木材', '清水混凝土', '天然石材', '古董織品'],
-                    keywords: [
-                        'wabi-sabi philosophy',
-                        'aged patina',
-                        'organic materials',
-                        'spiritual minimalism',
-                        'raw textures',
-                        'contemplative atmosphere'
-                    ],
-                    promptTemplate: `Interior design by Axel Vervoordt Japanese Zen, wabi-sabi aesthetic celebrating imperfection, aged weathered materials with beautiful patina, muted earthy color palette, mix of ancient and contemporary elements, raw organic textures and natural materials, spiritual contemplative atmosphere, fine art photography, soft diffused natural lighting`
+                    promptTemplate: `Japanese zen interior design, wabi-sabi aesthetic, aged natural materials, muted earthy palette, organic textures, contemplative atmosphere, soft diffused lighting`
                 }
+            }
+        };
+
+        // 渲染類型
+        const RENDER_TYPES = {
+            '3d-bird-view': {
+                id: '3d-bird-view',
+                label: '3D 俯視圖',
+                emoji: '🦅',
+                description: '立體鳥瞰視角',
+                promptSuffix: '3D architectural visualization, bird eye view perspective, isometric angle, showing interior layout from above, realistic materials and textures, professional render, soft ambient lighting, white background, clean composition'
+            },
+            '2d-floorplan': {
+                id: '2d-floorplan',
+                label: '2D 平面圖',
+                emoji: '📐',
+                description: '傳統平面配置',
+                promptSuffix: '2D architectural floor plan, top-down view, clear room boundaries, furniture layout icons, professional CAD style, white background, clean lines, labeled rooms'
             }
         };
 
@@ -485,6 +445,7 @@
             squareMeters: 30,
             budget: 800000,
             selectedStyle: 'modern-minimalist',
+            selectedRenderType: '3d-bird-view',
             uploadedFloorplan: null,
             uploadedFileName: '',
             isGenerating: false,
@@ -503,6 +464,7 @@
         const squareMetersInput = document.getElementById('square-meters');
         const budgetInput = document.getElementById('budget');
         const styleGrid = document.getElementById('style-grid');
+        const renderTypeGrid = document.getElementById('render-type-grid');
         const generateBtn = document.getElementById('generate-btn');
         const floorplanUpload = document.getElementById('floorplan-upload');
         const uploadArea = document.getElementById('upload-area');
@@ -510,7 +472,6 @@
         const floorplanPreviewImg = document.getElementById('floorplan-preview-img');
         const clearUploadBtn = document.getElementById('clear-upload');
         const inputSection = document.getElementById('input-section');
-        const progressSection = document.getElementById('progress-section');
         const resultSection = document.getElementById('result-section');
 
         // ====================================
@@ -518,6 +479,7 @@
         // ====================================
         function init() {
             renderStyleGrid();
+            renderRenderTypeGrid();
             setupEventListeners();
             updateCalculations();
         }
@@ -537,9 +499,29 @@
             });
         }
 
+        function renderRenderTypeGrid() {
+            renderTypeGrid.innerHTML = '';
+            Object.values(RENDER_TYPES).forEach(type => {
+                const card = document.createElement('div');
+                card.className = `render-type-card ${state.selectedRenderType === type.id ? 'selected' : ''}`;
+                card.innerHTML = `
+                    <div class="text-5xl mb-3">${type.emoji}</div>
+                    <h4 class="font-bold mb-1">${type.label}</h4>
+                    <p class="text-xs text-gray-400">${type.description}</p>
+                `;
+                card.onclick = () => selectRenderType(type.id);
+                renderTypeGrid.appendChild(card);
+            });
+        }
+
         function selectStyle(styleId) {
             state.selectedStyle = styleId;
             renderStyleGrid();
+        }
+
+        function selectRenderType(typeId) {
+            state.selectedRenderType = typeId;
+            renderRenderTypeGrid();
         }
 
         function setupEventListeners() {
@@ -677,9 +659,8 @@
                         console.error(`Attempt ${attempt + 1} API Error:`, errorBody);
                         lastError = new Error(`API請求失敗,狀態碼:${response.status}`);
                         
-                        if (attempt < maxRetries && (errorBody.includes("safety") || errorBody.includes("policy"))) {
-                            console.log("Safety filter triggered. Retrying with enhanced prompt...");
-                            payload.contents[0].parts[0].text += ", professional architectural photography, SFW, tasteful design";
+                        if (attempt < maxRetries) {
+                            payload.contents[0].parts[0].text += ", professional architectural visualization, tasteful design";
                             await new Promise(resolve => setTimeout(resolve, 1000));
                             continue;
                         }
@@ -696,8 +677,6 @@
                         lastError = new Error("API未返回有效的圖片資料");
                         console.error("Invalid API response structure:", result);
                         if (attempt < maxRetries) {
-                            console.log("Retrying...");
-                            payload.contents[0].parts[0].text += ", high quality render";
                             await new Promise(resolve => setTimeout(resolve, 1000));
                             continue;
                         }
@@ -759,6 +738,18 @@
             return data.candidates[0].content.parts[0].text;
         }
 
+        // 等待訊息
+        const loadingMessages = [
+            '我們正在仔細研讀您的空間...',
+            '為您構思最舒適的生活動線...',
+            '挑選最適合的色彩與材質...',
+            '打造每個角落的獨特氛圍...',
+            '讓光線在空間中自然流動...',
+            '即將為您呈現完整設計方案...'
+        ];
+        let loadingMessageIndex = 0;
+        let loadingInterval = null;
+
         // ====================================
         // 生成流程
         // ====================================
@@ -775,32 +766,33 @@
             generateBtn.textContent = '生成中...';
 
             inputSection.classList.add('hidden');
-            progressSection.classList.remove('hidden');
+            document.getElementById('loading-section').classList.remove('hidden');
+
+            // 開始輪播等待訊息
+            startLoadingMessages();
 
             try {
-                // Step 1: 分析空間需求
-                await updateProgress(1, 'active');
+                // Step 1: 分析空間需求（後台執行）
                 await step1_analyzeSpace();
-                await updateProgress(1, 'completed');
 
-                // Step 2: 生成平面圖
-                await updateProgress(2, 'active');
+                // Step 2: 生成平面圖（後台執行）
                 await step2_generateFloorplan();
-                await updateProgress(2, 'completed');
 
-                // Step 3: 生成渲染圖
-                await updateProgress(3, 'active');
+                // Step 3: 生成渲染圖（後台執行）
                 await step3_generateRenders();
-                await updateProgress(3, 'completed');
+
+                // 停止等待訊息
+                stopLoadingMessages();
 
                 // 顯示結果
-                progressSection.classList.add('hidden');
+                document.getElementById('loading-section').classList.add('hidden');
                 resultSection.classList.remove('hidden');
 
             } catch (error) {
                 console.error('生成失敗:', error);
+                stopLoadingMessages();
                 alert(`生成失敗: ${error.message}`);
-                progressSection.classList.add('hidden');
+                document.getElementById('loading-section').classList.add('hidden');
                 inputSection.classList.remove('hidden');
             } finally {
                 state.isGenerating = false;
@@ -809,20 +801,28 @@
             }
         }
 
-        async function updateProgress(step, status) {
-            const stepEl = document.getElementById(`step-${step}`);
-            const loaderEl = document.getElementById(`loader-${step}`);
+        function startLoadingMessages() {
+            loadingMessageIndex = 0;
+            const messageEl = document.getElementById('loading-message');
+            
+            // 立即顯示第一條訊息
+            messageEl.textContent = loadingMessages[0];
+            
+            // 每 5 秒切換一次訊息
+            loadingInterval = setInterval(() => {
+                loadingMessageIndex = (loadingMessageIndex + 1) % loadingMessages.length;
+                messageEl.style.opacity = '0';
+                setTimeout(() => {
+                    messageEl.textContent = loadingMessages[loadingMessageIndex];
+                    messageEl.style.opacity = '1';
+                }, 300);
+            }, 5000);
+        }
 
-            if (status === 'active') {
-                stepEl.classList.add('active');
-                loaderEl.classList.remove('hidden');
-            } else if (status === 'completed') {
-                stepEl.classList.remove('active');
-                stepEl.classList.add('completed');
-                loaderEl.classList.add('hidden');
-                const numberDiv = stepEl.querySelector('.w-10');
-                numberDiv.textContent = '✓';
-                numberDiv.classList.add('bg-green-600', 'text-white');
+        function stopLoadingMessages() {
+            if (loadingInterval) {
+                clearInterval(loadingInterval);
+                loadingInterval = null;
             }
         }
 
@@ -835,15 +835,8 @@
 - 室內坪數：${state.squareMeters} 坪（約 ${(state.squareMeters * 3.306).toFixed(1)} 平方公尺）
 - 裝潢預算：NT$ ${state.budget.toLocaleString()}
 - 設計風格：${DESIGNER_STYLES[state.selectedStyle].label}
-- 設計師參考：${designer.name}
 
-請仔細分析平面圖中的：
-1. 房間格局和數量
-2. 門窗位置
-3. 空間尺寸比例
-4. 動線配置
-
-然後提供完整的室內設計規劃，以 JSON 格式回傳：
+請仔細分析平面圖中的房間格局、門窗位置、空間尺寸、動線配置，然後提供完整的室內設計規劃，以 JSON 格式回傳：
 {
   "layout": {
     "total_area": "${state.squareMeters}坪",
@@ -851,19 +844,12 @@
       {
         "name": "客廳",
         "area": "10坪",
-        "furniture": ["L型沙發", "電視櫃", "茶几", "邊几"],
-        "features": ["落地窗", "主要採光面"],
-        "design_notes": "開放式設計，連接餐廳"
+        "furniture": ["L型沙發", "電視櫃", "茶几"],
+        "design_notes": "開放式設計"
       }
     ]
-  },
-  "design_concept": "根據平面圖分析，提供整體設計概念的詳細說明（至少150字）"
-}
-
-請確保:
-1. 根據實際平面圖的格局進行分析
-2. 考慮坪數和預算選擇合適的設計方案
-3. 完全符合${DESIGNER_STYLES[state.selectedStyle].label}風格特點`;
+  }
+}`;
 
             const response = await callGeminiAPI(prompt, [state.uploadedFloorplan]);
             const jsonMatch = response.match(/\{[\s\S]*\}/);
@@ -876,30 +862,54 @@
 
         async function step2_generateFloorplan() {
             const designer = DESIGNER_STYLES[state.selectedStyle].designer;
+            const renderType = RENDER_TYPES[state.selectedRenderType];
             
             const roomsDesc = state.layoutData.layout.rooms.map(room => 
                 `${room.name}（${room.area}）`
             ).join('、');
 
-            const floorplanPrompt = `請創建一個專業的室內平面配置圖（俯視圖）。
+            let floorplanPrompt = '';
+            
+            if (state.selectedRenderType === '3d-bird-view') {
+                // 3D 俯視圖 prompt
+                floorplanPrompt = `Create a stunning 3D architectural visualization of interior space from bird's eye view perspective.
+
+Style: ${DESIGNER_STYLES[state.selectedStyle].label}
+Designer inspiration: ${designer.name}
+Total Area: ${(state.squareMeters * 3.306).toFixed(0)} square meters
+Rooms: ${roomsDesc}
+
+Requirements:
+- 3D isometric or bird's eye view angle showing interior from above
+- Photo-realistic materials and textures
+- ${designer.promptTemplate}
+- Show furniture and interior details in 3D
+- Soft ambient lighting with natural shadows
+- Clean white or neutral background
+- Professional architectural visualization quality
+- High detail and realistic rendering
+- Clear spatial relationships between rooms
+
+請生成如同專業建築可視化的 3D 俯視效果圖，展現空間的立體感和設計美感。`;
+            } else {
+                // 2D 平面圖 prompt
+                floorplanPrompt = `請創建一個專業的2D室內平面配置圖（俯視圖）。
 
 設計風格：${DESIGNER_STYLES[state.selectedStyle].label}
 總面積：${(state.squareMeters * 3.306).toFixed(0)} 平方公尺
-
-空間配置：${state.layoutData.layout.rooms.map(room => `${room.name} ${room.area}`).join('、')}
+空間配置：${roomsDesc}
 
 圖面要求：
 • 清晰的房間邊界線
 • 標註各房間尺寸
-• 俯視角度的傢俱配置
+• 俯視角度的傢俱配置圖示
 • 門的開啟方向和窗戶位置
 • 比例尺和指北針
-• 使用繁體中文清楚標註：${roomsDesc}
+• 使用繁體中文清楚標註房間名稱
 • 專業建築製圖風格
 • 白色背景，細黑線條
-• 不同區域用淡色區分
-
-請在圖面上清楚寫出每個房間的繁體中文名稱。`;
+• 不同區域用淡色區分`;
+            }
 
             try {
                 const base64Image = await generateImageWithGemini(floorplanPrompt, state.uploadedFloorplan);
@@ -923,10 +933,8 @@
         async function step3_generateRenders() {
             const designer = DESIGNER_STYLES[state.selectedStyle].designer;
             const rooms = state.layoutData.layout.rooms;
-            const renderProgressEl = document.getElementById('render-progress');
             
             state.renders = [];
-            let completed = 0;
             let totalViews = 0;
             
             rooms.forEach(room => {
@@ -937,10 +945,8 @@
                 const views = room.name === '客廳' ? ['主沙發區視角', '從入口看向客廳'] : [`${room.name}主視角`];
                 
                 for (const view of views) {
-                    completed++;
-                    renderProgressEl.textContent = `正在生成 ${room.name} - ${view} (${completed}/${totalViews})`;
-
-                    const renderPrompt = `${designer.promptTemplate}. ROOM: ${room.name} ${view}. Size: ${room.area}. Furniture: ${room.furniture.join(' ')}. ${room.design_notes}. Photorealistic interior rendering, eye-level camera angle 24mm lens, natural daylight from windows, professional architectural photography, show spatial depth, realistic shadows reflections, warm inviting atmosphere, high resolution details`;
+                    // 後台靜默生成，不顯示進度
+                    const renderPrompt = `${designer.promptTemplate}. ROOM: ${room.name} ${view}. Size: ${room.area}. Furniture: ${room.furniture.join(' ')}. Photorealistic interior rendering, eye-level camera angle, natural daylight, professional architectural photography, spatial depth, realistic shadows, warm atmosphere, high resolution`;
 
                     try {
                         const base64Image = await generateImageWithGemini(renderPrompt);
@@ -993,12 +999,10 @@
         }
 
         function downloadAllImages() {
-            // 下載平面圖
             if (state.floorplanImage) {
                 downloadImage(state.floorplanImage, '平面配置圖');
             }
 
-            // 下載所有渲染圖
             state.renders.forEach((render, index) => {
                 setTimeout(() => {
                     downloadImage(render.imageUrl, `${render.space}-${render.view}`);
